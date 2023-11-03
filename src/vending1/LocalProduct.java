@@ -9,7 +9,7 @@ package vending1;
  * @author JohnRusso
  */
 public class LocalProduct extends Product {
-    private final int quantity;
+    private int quantity;
     
     LocalProduct(String pid, String desc, double p, String it, int c,int q)
     {
@@ -23,4 +23,9 @@ public class LocalProduct extends Product {
     }
     
     /*to do updateQuantity*/
+    public int updateQuantity(int q)
+    {
+        quantity += q;
+        return quantity;
+    }
 }

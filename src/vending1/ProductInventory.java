@@ -25,6 +25,11 @@ public class ProductInventory {
         ask user for itemNo, description, price, item_type, calories
         create array element by instantiating a product object
         */
+        Pr = new Product[numberProducts];
+        for (int i=0;i<numberProducts;i++)
+        {
+            
+        }
     }
     
     public Product findProduct(int pid)

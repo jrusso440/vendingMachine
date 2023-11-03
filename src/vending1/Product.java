@@ -43,4 +43,8 @@ public class Product {
         return productID;
     }
     /*to do getType and setPrice */
+    public String getType()
+    {
+        return itemType;
+    }
 }
