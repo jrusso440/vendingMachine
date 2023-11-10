@@ -15,6 +15,7 @@ public class VendingMachine {
     private LocalProduct[] lpr;
     private int nProducts;
     private int lastIndex;
+    private CashBox tcbox;
     
     VendingMachine(int vmid, String ip,CashBox cb,int npr)    {
         vendingMachineID = vmid;
@@ -22,17 +23,36 @@ public class VendingMachine {
         cbox = cb;
         nProducts = npr;
         lastIndex = -1;
-     }
+        lpr = new LocalProduct[nProducts];
+        }
    
-     public boolean addProduct(int pid, int qty)
+     public boolean addProduct(ProductInventory pi,int pid, int qty)
      {
-         /* todo 
-         add 1 to lastIndex if > nProducts, return false
-         otherwise findProduct with pid
-         if found, add object to array and return true
-         otherwise if return object's pid = -1 return false
-         */
-      }
-    
-   
+         lastIndex++;
+         if (lastIndex <= nProducts)
+         {
+            Product tempProd=pi.findProduct(pid);
+            lpr[lastIndex]= new LocalProduct(pid,tempProd.getDesc(),tempProd.getPrice(),
+            tempProd.getType(),tempProd.getCalories(),qty);
+            return true;
+         }
+         else
+             return false;
+     }
+     public double depositMoney(CashBox tb)
+     {
+         tcbox = tb;
+         return tcbox.getBalance();
+     }
+     
+     /*to do method to select product 
+     should include check to make sure we can pay for this and
+     make change
+     1. pass in product id
+     2. get price of product
+     3. assuming user insert money check against temp cb balance
+        validateChange method
+     4. makeChange method
+     5. update inventory (to be written inside of product and vendingmachine)
+     */
 }
