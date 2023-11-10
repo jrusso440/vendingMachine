@@ -11,7 +11,7 @@ package vending1;
 public class LocalProduct extends Product {
     private int quantity;
     
-    LocalProduct(String pid, String desc, double p, String it, int c,int q)
+    LocalProduct(int pid, String desc, double p, String it, int c,int q)
     {
         super(pid,desc,p,it,c);
         quantity = q;
@@ -23,9 +23,8 @@ public class LocalProduct extends Product {
     }
     
     /*to do updateQuantity*/
-    public int updateQuantity(int q)
+    public void updateQuantity(int q)
     {
         quantity += q;
-        return quantity;
     }
-}
+}   

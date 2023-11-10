@@ -19,7 +19,7 @@ public class Product {
     {
         productID = -1;
     }
-    Product(String pid, String desc, double p, String it, int c)
+    Product(int pid, String desc, double p, String it, int c)
     {
         productID = pid;
         description = desc;
@@ -42,9 +42,19 @@ public class Product {
     {
         return productID;
     }
-    /*to do getType and setPrice */
+    /*to do getType */
     public String getType()
     {
         return itemType;
+    }
+    
+    public int getCalories()
+    {
+        return calories;
+    }
+    
+    public double getPrice()
+    {
+        return price;
     }
 }

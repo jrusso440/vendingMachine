@@ -24,8 +24,11 @@ public class Vending1 {
         CashBox tbox;
         tbox=cb.makeChange(2.25, 1.75);
         System.out.print(tbox.getQuarters()+" "+tbox.getDimes()+" "+tbox.getNickels());
-
-        
+        /*int vmid, String ip,CashBox cb,int npr*/
+        ProductInventory pinv = new ProductInventory(3);
+        pinv.loadProducts();
+        VendingMachine vm1 = new VendingMachine(24,"10.10.10.10",tbox,3);
+        vm1.addProduct(pinv, 1, 100);
     }
     
 }
