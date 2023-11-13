@@ -36,7 +36,7 @@ public class ProductInventory {
         {
             
         }*/
-        Pr[0]= new Product(1,"Chip",1.50,"Snack",200);
+        Pr[0]= new Product(1,"Chips",1.50,"Snack",200);
         Pr[1] = new Product(2,"Pretzels",1.10,"Snack",150);
         Pr[2] = new Product(3,"Pepsi",2.25,"Drink",200);
     }
